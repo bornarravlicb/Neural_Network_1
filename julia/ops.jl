@@ -1,4 +1,4 @@
-
+#Activations
 module Activations
 export linear, relu, sigmoid, tanh
 
@@ -12,7 +12,7 @@ tanh(x) = (exp.(x) .- exp.(-x)) ./ (exp.(x) .+ exp.(-x))
 
 end
 
-
+#Layer processing
 module Layers
 export forward, backward
 
@@ -29,7 +29,7 @@ end
 
 end
 
-
+#Losses
 module Losses
 export mse, dmse
 using Statistics
@@ -44,6 +44,7 @@ end
 
 end
 
+#Optimizers
 module Optimizers
 export update_params
 
