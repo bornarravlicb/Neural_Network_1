@@ -33,6 +33,23 @@ class DenseLayer:
     def backward(self, dz):
         dx, dw, db = Main.Layers.backward(dz, self.x, self.w)
         if self.optimizer is not None:
-            self.optimizer.update_params!(self.w, self.b, dw, db)
+            self.optimizer.update(self.w, self.b, dw, db)
         return dx
     
+class Losses:
+    @staticmethod
+    def mse(y_pred, y_true):
+        return Main.Losses.mse(y_pred, y_true)
+
+    @staticmethod
+    def dmse(y_pred, y_true):
+        return Main.Losses.dmse(y_pred, y_true)
+
+class SGD:
+    def __init__(self, lr=0.01):
+        self.lr = lr
+
+    def update(self, w, b, dw, db):
+        Main.Optimizers.update_params(w, b, dw, db, self.lr)
+
+
