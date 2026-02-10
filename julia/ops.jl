@@ -45,9 +45,9 @@ end
 end
 
 module Optimizers
-export update_params!
+export update_params
 
-function update_params!(w, b, dw, db, lr)
+function update_params(w, b, dw, db, lr)
     w .-= lr .* dw
     b .-= lr .* db
 end
