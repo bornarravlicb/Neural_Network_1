@@ -1,5 +1,5 @@
 from julia import Main
-Main.include("ops.jl")
+main.include("julia/ops.jl")
 
 class Activations:
     @staticmethod
